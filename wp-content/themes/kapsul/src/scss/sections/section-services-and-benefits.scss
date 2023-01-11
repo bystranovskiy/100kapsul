@@ -1,0 +1,81 @@
+@import "../partials/variables";
+@import "../bootstrap/functions";
+@import "../bootstrap/variables";
+@import "../bootstrap/mixins";
+
+.services-list {
+  text-align: center;
+  padding: 0 16px;
+
+  .services-list-item {
+    display: block;
+    margin: 0 auto;
+    max-width: 220px;
+
+    img {
+      display: block;
+      margin: 0 auto;
+
+      @include media-breakpoint-down(md) {
+        max-width: 120px;
+      }
+
+    }
+
+    h3 {
+      margin: 10px 0 0;
+      padding-bottom: 5px;
+      display: inline-block;
+
+      span {
+        display: block;
+        font-size: 16px;
+        color: $grey;
+        margin-top: 5px;
+        font-weight: 400;
+      }
+
+      @include media-breakpoint-down(md) {
+        font-size: 18px;
+        line-height: 1.1;
+      }
+
+    }
+
+  }
+
+  a.services-list-item, .services-list-item.toggle {
+    text-decoration: none;
+    cursor: pointer;
+
+    h3 {
+      position: relative;
+      transition: color .3s;
+
+      &:after {
+        position: absolute;
+        content: "";
+        bottom: 0;
+        width: 100%;
+        height: 0;
+        background: $purple;
+        transition: height .3s;
+        left: 0;
+      }
+    }
+
+    &:hover, &.active {
+      h3 {
+        color: $purple;
+
+        &:after {
+          height: 3px;
+        }
+      }
+    }
+  }
+
+  .slick-arrow {
+    top: 73px;
+  }
+}

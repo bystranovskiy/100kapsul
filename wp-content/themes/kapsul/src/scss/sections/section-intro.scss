@@ -1,0 +1,157 @@
+@import "../partials/variables";
+@import "../bootstrap/functions";
+@import "../bootstrap/variables";
+@import "../bootstrap/mixins";
+
+section.section-intro {
+
+  + .section-services-and-benefits {
+    padding-top: 0 !important;
+  }
+
+  .col-content {
+    width: 100%;
+    @include media-breakpoint-up(lg) {
+      width: 56%;
+    }
+    @include media-breakpoint-up(xxl) {
+      width: 52%;
+    }
+  }
+
+  .col-image {
+    width: 100%;
+    order: -1;
+    @include media-breakpoint-up(lg) {
+      width: 44%;
+      order: unset;
+    }
+    @include media-breakpoint-up(xxl) {
+      width: 46%;
+    }
+
+    img {
+      width: 540px;
+      margin: -30px auto 30px;
+      display: block;
+      @include media-breakpoint-up(xl) {
+        margin: 0 auto 15px;
+      }
+    }
+  }
+
+  .tabs-block {
+    width: 100%;
+    margin: 20px 0;
+    border-radius: 5px;
+    box-shadow: -21px 41px 30px #D1F7FF;
+    background: $white;
+    max-width: 700px;
+
+    .tabs-nav {
+      background: $light-grey;
+      display: flex;
+      border-top-left-radius: 5px;
+      border-top-right-radius: 5px;
+      padding: 0 30px;
+      justify-content: space-between;
+
+
+      @include media-breakpoint-down(lg) {
+        padding: 0 10px;
+        overflow-x: auto;
+        white-space: nowrap;
+        &::-webkit-scrollbar {
+          width: 3px;
+          height: 3px;
+        }
+
+        &::-webkit-scrollbar-track {
+          border-radius: 10px;
+          background: rgba($black, .1);
+        }
+
+        &::-webkit-scrollbar-thumb {
+          border-radius: 10px;
+          background: rgba($purple, 1);
+        }
+
+        &::-webkit-scrollbar-thumb:hover {
+          //background: rgba($purple, .4);
+        }
+
+        &::-webkit-scrollbar-thumb:active {
+          //background: rgba($purple, .9);
+        }
+      }
+
+
+      .nav-item {
+        color: $dark-grey;
+        padding: 0 10px;
+
+        @include media-breakpoint-up(xl) {
+          max-width: 190px;
+        }
+
+        .toggle {
+          height: 100%;
+          cursor: pointer;
+          display: flex;
+          align-items: center;
+          padding: 10px 0;
+          position: relative;
+          transition: color .3s;
+          margin: 0;
+          text-align: center;
+
+          &:after {
+            @include media-breakpoint-up(xl) {
+              position: absolute;
+              content: "";
+              background: $purple;
+              width: 100%;
+              bottom: 0;
+              height: 0;
+              transition: height .3s;
+            }
+          }
+
+          &:hover, &.active {
+            color: $purple;
+          }
+
+          &.active {
+            &:after {
+              height: 3px;
+            }
+          }
+        }
+      }
+    }
+
+    .tabs-content {
+      padding: 20px;
+      @include media-breakpoint-up(xl) {
+        padding: 40px;
+      }
+
+      ul {
+        list-style: none;
+        margin-left: 0;
+        padding-left: 1em;
+
+        li {
+          padding: 0 0 .5em;
+
+          &:before {
+            display: inline-block;
+            content: "-";
+            width: 1em;
+            margin-left: -1em;
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,23 @@
+@import "../partials/variables";
+
+section.section-universal-content {
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  color: $black;
+  position: relative;
+
+  &:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: rgba($white, .4);
+  }
+
+  .container {
+    position: relative;
+  }
+}

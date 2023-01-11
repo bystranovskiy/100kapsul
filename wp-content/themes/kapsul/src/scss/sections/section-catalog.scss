@@ -1,0 +1,75 @@
+@import "../partials/variables";
+
+.section-catalog {
+  overflow: hidden;
+
+  .catalog-menu {
+    .catalog-menu-group {
+      margin: 0 0 30px;
+      padding: 0;
+      list-style: none;
+      border-radius: 5px;
+      border: 1px solid $light-grey;
+
+      &:last-child {
+        // margin: 0;
+      }
+    }
+
+    .catalog-menu-item {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0;
+      cursor: pointer;
+      position: relative;
+      transition: color .3s;
+
+      &:after {
+        width: 0;
+        border-radius: 1px;
+        height: 100%;
+        top: 0;
+        left: -1px;
+        content: "";
+        position: absolute;
+        background-color: $purple;
+        transition: width .3s;
+      }
+
+      &:hover, &.active {
+        &:after {
+          width: 2px;
+        }
+      }
+
+      &:hover {
+        color: $black;
+      }
+
+      &.active {
+        color: $purple;
+      }
+
+      &:not(:last-child) {
+        margin-bottom: 10px;
+      }
+
+      .title {
+        padding: 10px 20px;
+        font-weight: 600;
+      }
+
+      .thumbnail {
+        border-radius: 5px;
+        display: block;
+      }
+    }
+  }
+
+  .posts-list {
+    transition: height .4s;
+  }
+
+}
+

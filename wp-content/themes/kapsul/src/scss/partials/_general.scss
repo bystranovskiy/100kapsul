@@ -1,0 +1,137 @@
+// @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap');
+
+html, body {
+  max-width: 100%;
+  overflow-x: hidden;
+
+  &.fixed {
+    overflow: hidden;
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: $font-primary;
+  font-size: 16px;
+  line-height: 1.4;
+  font-weight: normal;
+  color: $grey;
+  @include custom-scrollbar;
+
+  &.page, &.post {
+    margin-bottom: 0;
+  }
+}
+
+.site {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.container.narrow {
+  @include media-breakpoint-up(lg) {
+    max-width: 880px;
+  }
+
+}
+
+h1, h2, h3, h4, h5
+.h1, .h2, .h3, .h4, .h5 {
+  color: $dark-grey;
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: -0.04em;
+  // font-family: $font-secondary;
+}
+
+h1, .h1 {
+  font-size: 2em;
+  margin: 0 0 .3em;
+  line-height: 1.1;
+  @include media-breakpoint-up(lg) {
+    font-size: 2.5em;
+  }
+  @include media-breakpoint-up(xl) {
+    font-size: 3em;
+  }
+}
+
+h2, .h2 {
+  font-size: 1.9em;
+  margin: 0 0 .8em;
+  @include media-breakpoint-up(lg) {
+    font-size: 2.25em;
+  }
+}
+
+h3, .h3 {
+  font-size: 1.25em;
+  margin: 0 0 1em;
+  @include media-breakpoint-up(lg) {
+    font-size: 1.5em;
+  }
+}
+
+h4, .h4 {
+  font-size: 1.125em;
+  margin: 0 0 1em;
+  @include media-breakpoint-up(lg) {
+    font-size: 1.25em;
+  }
+}
+
+h5, .h5 {
+  font-size: 1em;
+  margin: 0 0 1em;
+  @include media-breakpoint-up(lg) {
+    font-size: 1.125em;
+  }
+}
+
+ul, ol {
+  margin: 0 0 1em 0;
+  padding-inline-start: 1.3em;
+}
+
+main > section {
+  &:first-child, &:first-child[class*='py-'] {
+    padding-top: 130px !important;
+  }
+}
+
+.blue-bg {
+  background-color: $light-blue;
+}
+
+.terms-list {
+  strong {
+    display: inline-block;
+    border-radius: 10px;
+    background: $bright-grey;
+    padding: 7px 11px;
+    color: $grey;
+  }
+}
+
+#breadcrumbs {
+  a {
+    text-decoration: none;
+    color: $grey;
+
+    &:hover {
+      color: $black;
+    }
+  }
+
+  .breadcrumb_last {
+    color: $black;
+  }
+}
+
+@import "slick";
+@import "buttons";
+@import "wpcf7";

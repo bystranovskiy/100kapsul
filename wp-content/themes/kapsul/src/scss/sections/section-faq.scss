@@ -1,0 +1,68 @@
+@import "../partials/variables";
+
+.section-faq {
+
+}
+
+.faq-list-items {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+
+  li {
+    border-radius: 5px;
+    border: 1px solid $light-grey;
+    margin-bottom: 10px;
+    transition: border-color .3s;
+
+    &:hover {
+      border-color: $purple;
+    }
+
+    .item-title {
+      padding: 20px 30px;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      h3 {
+        margin: 0;
+      }
+
+      svg {
+        display: block;
+        min-width: 31px;
+        margin-left: 10px;
+        transition: transform .3s;
+      }
+    }
+
+    .item-description {
+      overflow: hidden;
+      max-height: 0;
+      transition: max-height .3s;
+
+      p {
+        margin: 0;
+        padding: 20px 30px 40px;
+      }
+    }
+
+  }
+
+  input:checked + li {
+    border-color: $purple;
+
+    .item-title {
+      svg {
+        transform: scaleY(-1);
+      }
+    }
+
+    .item-description {
+      max-height: 1000px;
+      transition: max-height 1s;
+    }
+  }
+}

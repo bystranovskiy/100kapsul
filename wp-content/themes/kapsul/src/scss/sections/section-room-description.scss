@@ -1,0 +1,144 @@
+@import "../partials/variables";
+@import "../bootstrap/functions";
+@import "../bootstrap/variables";
+@import "../bootstrap/mixins";
+
+.section-room-description {
+
+  .inner-wrapper {
+    border-radius: 10px;
+    background-color: $white;
+    padding: 15px;
+  }
+
+  .col-post-gallery {
+
+    .post-gallery-image {
+      display: block;
+      padding: 4px;
+      transition: opacity .3s;
+
+      &:hover {
+        opacity: .5;
+      }
+
+      img {
+        width: 100%;
+      }
+    }
+
+    .post-gallery-featured {
+      position: relative;
+    }
+
+    .post-gallery-additional {
+      display: flex;
+
+      .post-gallery-image {
+        width: 25%;
+
+        &:nth-child(n+5) {
+          display: none;
+        }
+      }
+    }
+
+    img {
+      display: block;
+      border-radius: 6px;
+    }
+  }
+
+  .col-content {
+    @include custom-scrollbar;
+
+    @include media-breakpoint-up(lg) {
+      max-height: 440px;
+    }
+    @include media-breakpoint-up(xl) {
+      max-height: 570px;
+    }
+    @include media-breakpoint-up(xxl) {
+      max-height: 730px;
+    }
+  }
+
+  .price-sticker {
+    position: absolute;
+    top: 4px;
+    left: 30px;
+    color: $white;
+    padding: 10px 15px;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    background-color: $purple;
+    box-shadow: 0 4px 4px rgba($black, .25);
+  }
+
+  transition: opacity .5s;
+
+  + .section-featured-posts {
+    transition: opacity .5s;
+  }
+
+  &[disabled], &[disabled] + .section-featured-posts {
+    opacity: .3;
+    pointer-events: none;
+  }
+
+}
+
+.toggle-room {
+
+  label {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+  }
+
+  input {
+    padding: 10px;
+    height: 40px;
+    width: 40px;
+    cursor: pointer;
+    margin-left: 0.5em;
+  }
+}
+
+.section-apartment-components {
+  .add-another-room {
+    color: $black;
+    font-weight: 700;
+
+    .ico-plus {
+      display: inline-block;
+      margin: 0 0 0 .5em;
+      vertical-align: middle;
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      border: 3px solid $grey;
+      position: relative;
+
+      &:before, &:after {
+        content: "";
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        height: 2px;
+        border-radius: 1px;
+        background-color: $black;
+        width: 26px;
+      }
+
+      &:before {
+        transform: translate(-50%, -50%);
+      }
+
+      &:after {
+        transform: translate(-50%, -50%) rotate(90deg);
+      }
+    }
+  }
+}

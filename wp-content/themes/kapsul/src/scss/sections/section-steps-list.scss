@@ -1,0 +1,106 @@
+@import "../partials/variables";
+@import "../bootstrap/functions";
+@import "../bootstrap/variables";
+@import "../bootstrap/mixins";
+
+.section-steps-list {
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  color: $black;
+  position: relative;
+
+  &:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: rgba($white, .4);
+  }
+
+  .container {
+    position: relative;
+  }
+
+  .steps-list {
+    @include media-breakpoint-up(xl) {
+      margin: 0 -30px;
+    }
+  }
+
+  .step-item {
+    color: $black;
+    text-align: center;
+
+    @include media-breakpoint-up(xl) {
+      padding-right: 30px;
+      padding-left: 30px;
+    }
+
+    .inner-wrapper {
+      border-radius: 10px;
+      border: 1px solid $grey;
+      height: 100%;
+    }
+
+    .step-item-header {
+      display: flex;
+      justify-content: space-between;
+
+      .num {
+        font-weight: 700;
+        font-size: 48px;
+        padding: 15px;
+      }
+
+      .title {
+        // font-family: $font-secondary;
+        font-weight: 600;
+        font-size: 18px;
+        line-height: 1.2;
+        padding: 15px 0;
+        min-height: 130px;
+        display: flex;
+        align-items: center;
+        @include media-breakpoint-up(xxl) {
+          font-size: 20px;
+        }
+      }
+
+      .ico {
+        min-width: 68px;
+        width: 68px;
+        height: 68px;
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-image: url('../../../src/img/step-next.png');
+        margin: 20px -15px 0 15px;
+
+        @include media-breakpoint-up(xl) {
+          min-width: 82px;
+          width: 82px;
+          height: 82px;
+          margin: 15px -20px 0 15px;
+        }
+      }
+    }
+
+    .step-item-content {
+      padding: 15px 15px 30px;
+    }
+
+    &:last-child {
+      .step-item-header {
+        .ico {
+          background-image: url('../../../src/img/step-end.png');
+        }
+      }
+    }
+
+  }
+
+
+}

@@ -1,0 +1,46 @@
+@import "../partials/variables";
+@import "../bootstrap/functions";
+@import "../bootstrap/variables";
+@import "../bootstrap/mixins";
+
+.section-reviews {
+
+  .review-item {
+    border-radius: 10px;
+    border: 1px solid $light-grey;
+    padding: 30px;
+    position: relative;
+    margin-top: 50px;
+
+    @include media-breakpoint-up(lg) {
+      margin-bottom: 50px;
+    }
+  }
+
+  .review-image {
+    display: block;
+    width: 126px;
+    height: 126px;
+    object-fit: cover;
+    border-radius: 50%;
+    position: absolute;
+    right: 30px;
+    top: -40px;
+  }
+
+  .review-title {
+    padding-right: 130px;
+    margin: 0;
+  }
+
+  .review-rating {
+    margin: 10px 0;
+    @for $i from 1 through 5 {
+      &[data-rating="#{$i}"] {
+        svg:nth-child(-n+#{$i}) path {
+          fill: #FD3057;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,111 @@
+.wpcf7-form {
+
+  .wpcf7-form-control-wrap, label {
+    display: block;
+    font-size: 14px;
+    @include media-breakpoint-up(md) {
+      font-size: 1rem;
+    }
+  }
+
+  .wpcf7-checkbox {
+    display: flex;
+    margin: 15px -5px;
+    justify-content: space-between;
+
+    .wpcf7-list-item {
+      margin: 0 5px;
+    }
+
+    label {
+      display: flex;
+      align-items: center;
+      cursor: pointer;
+
+      input {
+        min-width: 40px;
+        margin: 0 10px 0 0;
+      }
+    }
+  }
+
+  .wpcf7-response-output {
+    margin: 15px 0 0;
+    border-radius: 5px;
+    background-color: rgba($white, .6);
+  }
+
+  input[type="checkbox"] {
+    cursor: pointer;
+  }
+
+  br {
+    display: none;
+  }
+
+  p {
+    margin: 0;
+  }
+
+  .wpcf7-not-valid-tip {
+    display: none;
+  }
+
+  .wpcf7-not-valid {
+    border-color: $terracotta;
+  }
+
+  input, textarea {
+    display: block;
+    width: 100%;
+    background: $white;
+    border: 1px solid $light-grey;
+    border-radius: 5px;
+    height: 40px;
+    padding: 10px;
+    margin-bottom: 10px;
+    font-size: 14px;
+
+    &::placeholder {
+      color: $light-grey;
+    }
+  }
+
+  textarea {
+    height: 80px;
+  }
+
+  .btn {
+    cursor: pointer;
+    border-radius: 5px;
+    height: 40px;
+
+    span {
+      padding: 0 34px;
+      border-radius: 3px;
+      line-height: 36px;
+    }
+  }
+
+  .codedropz-upload-handler {
+    border-color: $light-grey;
+
+    .codedropz-upload-container {
+      background-color: $white;
+      border-radius: 5px;
+    }
+  }
+
+  &.submitting {
+    button[type="submit"] {
+      span {
+        background-color: $white;
+        color: transparent;
+      }
+
+      svg {
+        opacity: 1;
+      }
+    }
+  }
+}
